@@ -60,7 +60,7 @@
 		border-radius: 3px;
 		vertical-align: middle;
 	}
-	#introduction,
+	#welcome,
 	#features {
 		display: block;
 	}
@@ -97,8 +97,7 @@
 		font-size: 22px;
 		font-weight: normal;
 	}
-	#introduction article,
-	#features article {
+	#welcome article {
 		display: block;
 		width: 576px;
 		max-width: none;
@@ -106,127 +105,43 @@
 		text-align: left;
 		border: 1px solid transparent;
 	}
-	#introduction article svg,
-	#features article svg {
-		display: block;
-		width: calc(100% - 64px);
-		margin: 32px;
-	}
-	#introduction article svg text tspan,
-	#features article svg text tspan {
-		font-family: 'museo-sans-300';
-		font-size: 20px;
-	}
-	#introduction article p,
-	#features article p {
+	#welcome article p{
 		text-align: justify;
 	}
-	#introduction article p.center,
-	#features article p.center {
+	#welcome article p.center {
 		text-align: center;
 	}
 
-	#features > div {
-		display: block;
-		width: 576px;
-		margin: 128px auto;
-	}
-	#features > div h3 {
-		font-family: 'museo-sans-300';
-		font-size: 32px;
-		font-weight: normal;
-		text-align: center;
-	}
-	#features > div h3.left,
-	#features > div h3.right {
-		display: inline-block;
-		width: calc(50% - 16px);
-		margin: 1em 0px;
-	}
-	#features > div article.left,
-	#features > div article.right {
-		display: inline-block;
-		width: calc(50% - 16px);
-		min-height: 384px;
-		margin: 0px 0px 32px 0px;
-		background: #363f3e;
-	}
-	#features > div article img {
-		display: block;
-		margin: 32px auto;
-		outline: none;
-		border: 0px none;
-	}
-
-	#features article.center {
-		display: block;
-		margin: 0px auto;
-	}
-	#features h3.left,
-	#features article.left {
-		float: left;
-	}
-	#features h3.right,
-	#features article.right {
-		float: right;
-	}
-
-	#features > div:after,
-	#features article.clear:after {
-		display: block;
-		content: "";
-		clear: both;
-	}
-
-
-	#installation,
-	#tutorial{
+	#blog {
 		overflow: auto;
 	}
-	#installation article:nth-child(1), 
-	#tutorial article:nth-child(1) {
+	#blog article:nth-child(1) {
 		min-width: 384px;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
 	}
-	#installation article:nth-child(1) ul.select, 
-	#tutorial article:nth-child(1) ul.select {
+	#blog article:nth-child(1) ul.select {
 		margin: 0px;
 	}
-	#installation article:nth-child(1) p button, 
-	#tutorial article:nth-child(1) p button{
+	#blog article:nth-child(1) p button {
 		min-width: 144px;
 	}
-	#installation article:nth-child(2) {
-		min-width: 512px;
-	}
-	#tutorial article:nth-child(2) {
+	#blog article:nth-child(2) {
 		min-width: 512px;
 		overflow-x: hidden;
 		overflow-y: auto;
 	}
-	#installation article:nth-child(2) h1, 
-	#tutorial article:nth-child(2) h1 { margin: 32px 16px; font-size: 32px; }
-	#installation article:nth-child(2) h2,
-	#tutorial article:nth-child(2) h2 { margin: 32px 16px; font-size: 32px; }
-	#installation article:nth-child(2) p,
-	#tutorial article:nth-child(2) p  { margin: 16px; }
+	#blog article:nth-child(2) h1 { margin: 32px 16px; font-size: 32px; }
+	#blog article:nth-child(2) h2 { margin: 32px 16px; font-size: 32px; }
+	#blog article:nth-child(2) p { margin: 16px; }
 
 	@media (max-width: 660px) {
-		#introduction article,
-		#features article {
+		#welcome article {
 			width: auto;
 		}
-		#introduction article svg,
-		#features article svg {
-			width: 100%;
-			margin: 0px;
-		}
-		#introduction article div,
-		#introduction article p,
-		#features article div,
-		#features article p {
+		#welcome article div,
+		#welcome article p {
 			margin-left: 4px;
 			margin-right: 4px;
 		}
