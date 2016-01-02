@@ -1,5 +1,4 @@
-
-lychee.define('app.state.Settings').includes([
+lychee.define('app.state.Blog').includes([
 	'lychee.app.State'
 ]).tags({
 	platform: 'html'

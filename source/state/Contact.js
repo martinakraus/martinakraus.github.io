@@ -1,4 +1,4 @@
-lychee.define('app.state.Welcome').includes([
+lychee.define('app.state.Contact').includes([
 	'lychee.app.State'
 ]).tags({
 	platform: 'html'

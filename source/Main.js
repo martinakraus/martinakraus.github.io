@@ -2,7 +2,9 @@
 lychee.define('app.Main').requires([
 	'lychee.data.JSON',
 	'app.state.Welcome',
-	'app.state.Settings'
+	'app.state.Blog'.
+	'app.state.Development'
+	'app.state.Contact'
 ]).includes([
 	'lychee.app.Main'
 ]).exports(function(lychee, app, global, attachments) {

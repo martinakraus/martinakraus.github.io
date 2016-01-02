@@ -406,6 +406,25 @@ main > section > article:nth-child(2) {
 	flex: 3;
 }
 
+main > section#research {
+	display: block;
+}
+
+main > section > article#research-selection {
+	min-width: 256px;
+}
+
+main > section > article#research-selection:nth-child(1) {
+	margin: 0px 16px 0px 32px;
+	max-width: 1800px;
+}
+
+main > section > article#research-selection:nth-child(2) {
+	margin: 0px 16px 0px 32px;
+}
+
+
+
 footer {
 	display: block;
 	position: fixed;
@@ -551,6 +570,44 @@ ul.select input {
 	margin: 0px 8px 0px 0px;
 	padding: 0px;
 }
+
+/*
+ * UI
+ */
+
+ul.research-select {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.research-select li {
+	margin: 0px;
+	padding: 112px;
+	height: 32px;
+	display: inline;
+	line-height: 32px;
+	list-style: none;
+	text-align: left;
+	white-space: nowrap;
+}
+
+ul.research-select li span {
+	display: inline-block;
+	width: auto;
+	line-height: 20px;
+	font-family: 'museo-sans-300';
+	font-size: 18px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+ul.research-select input {
+	display: inline-block;
+	line-height: 32px;
+	margin: 0px 8px 0px 0px;
+	padding: 0px;
+}
+
 
 a.button {
 	text-decoration: none;
@@ -1064,4 +1121,3 @@ table.vertical tr:last-child th,
 table.vertical tr:last-child td {
 	border-bottom: 2px solid #404844;
 }
-

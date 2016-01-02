@@ -24,7 +24,13 @@
 				"Welcome": [
 					"js"
 				],
-				"Settings": [
+				"Blog": [
+					"js"
+				],
+				"Development": [
+					"js"
+				],
+				"Contact": [
 					"js"
 				]
 			},

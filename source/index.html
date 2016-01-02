@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>lycheeJS Separated Boilerplate</title>
+	<title>CodeKittey</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -11,7 +11,7 @@
 	<meta property="og:image" content="/design/desktop.png">
 	<meta property="og:image:width" content="256">
 	<meta property="og:image:height" content="256">
-	<meta property="og:description" content="Humans need not apply">
+	<meta property="og:description" content="Next-Gen Isomorphic Application Engine for Embedded, Console, Mobile, Server and Desktop">
 
 	<!-- DESIGN -->
 	<link rel="stylesheet" href="/design/index.css">
@@ -26,25 +26,31 @@
 	<script src="/libraries/lychee/build/html/dist/index.js"></script>
 
 	<style>
-	#welcome article:nth-child(2) {
-		margin: 0px 16px 0px 16px;
+	.ico-demo:before     { content: "\e05c"; }
+	.ico-features:before { content: "\e020"; }
+	.ico-github:before   { content: "\e026"; }
+	.ico-tutorial:before { content: "\e052"; }
+	menu.active {
+		width: 164px;
 	}
-	#welcome article:nth-child(3) {
-		margin: 0px 0px 0px 16px;
+	menu:before {
+		content: 'CodeKittey';
 	}
-	#welcome article > div {
-		height: 144px;
+	menu.active ~ main {
+		left: 176px;
 	}
-	#welcome article a.button {
-		display: block;
-		width: 160px;
-		margin: 0px auto;
+	menu > aside {
+		bottom: 56px;
 	}
-	#welcome article pre {
+	footer {
+		line-height: 20px;
+	}
+	article pre {
 		display: block;
 		margin: 0px;
 	}
-	#welcome article code {
+	article code,
+	article code.hljs {
 		display: inline-block;
 		padding: 0.2em 0.4em;
 		color: #ffffff;
@@ -54,115 +60,287 @@
 		border-radius: 3px;
 		vertical-align: middle;
 	}
+	#introduction,
+	#features {
+		display: block;
+	}
+	#introduction-logo {
+		display: block;
+		margin: 128px auto;
+		text-align: center;
+	}
+	#introduction-logo h1 {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0px 16px;
+		line-height: 0px;
+	}
+	#introduction-logo h2 {
+		display: inline-block;
+		height: 128px;
+		vertical-align: middle;
+		margin: 0px 16px;
+		padding: 0px;
+		color: #efefef;
+		font-family: 'museo-sans-300';
+		font-size: 64px;
+		font-weight: normal;
+		line-height: 128px;
+	}
+	#introduction-logo h2 span {
+		color: #d0494b;
+	}
+	#introduction-logo h3 {
+		margin: 0px 16px 0px 16px;
+		padding: 0px;
+		font-family: 'museo-sans-300';
+		font-size: 22px;
+		font-weight: normal;
+	}
+	#introduction article,
+	#features article {
+		display: block;
+		width: 576px;
+		max-width: none;
+		margin: 128px auto;
+		text-align: left;
+		border: 1px solid transparent;
+	}
+	#introduction article svg,
+	#features article svg {
+		display: block;
+		width: calc(100% - 64px);
+		margin: 32px;
+	}
+	#introduction article svg text tspan,
+	#features article svg text tspan {
+		font-family: 'museo-sans-300';
+		font-size: 20px;
+	}
+	#introduction article p,
+	#features article p {
+		text-align: justify;
+	}
+	#introduction article p.center,
+	#features article p.center {
+		text-align: center;
+	}
+
+	#features > div {
+		display: block;
+		width: 576px;
+		margin: 128px auto;
+	}
+	#features > div h3 {
+		font-family: 'museo-sans-300';
+		font-size: 32px;
+		font-weight: normal;
+		text-align: center;
+	}
+	#features > div h3.left,
+	#features > div h3.right {
+		display: inline-block;
+		width: calc(50% - 16px);
+		margin: 1em 0px;
+	}
+	#features > div article.left,
+	#features > div article.right {
+		display: inline-block;
+		width: calc(50% - 16px);
+		min-height: 384px;
+		margin: 0px 0px 32px 0px;
+		background: #363f3e;
+	}
+	#features > div article img {
+		display: block;
+		margin: 32px auto;
+		outline: none;
+		border: 0px none;
+	}
+
+	#features article.center {
+		display: block;
+		margin: 0px auto;
+	}
+	#features h3.left,
+	#features article.left {
+		float: left;
+	}
+	#features h3.right,
+	#features article.right {
+		float: right;
+	}
+
+	#features > div:after,
+	#features article.clear:after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+
+
+	#installation,
+	#tutorial{
+		overflow: auto;
+	}
+	#installation article:nth-child(1), 
+	#tutorial article:nth-child(1) {
+		min-width: 384px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	#installation article:nth-child(1) ul.select, 
+	#tutorial article:nth-child(1) ul.select {
+		margin: 0px;
+	}
+	#installation article:nth-child(1) p button, 
+	#tutorial article:nth-child(1) p button{
+		min-width: 144px;
+	}
+	#installation article:nth-child(2) {
+		min-width: 512px;
+	}
+	#tutorial article:nth-child(2) {
+		min-width: 512px;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	#installation article:nth-child(2) h1, 
+	#tutorial article:nth-child(2) h1 { margin: 32px 16px; font-size: 32px; }
+	#installation article:nth-child(2) h2,
+	#tutorial article:nth-child(2) h2 { margin: 32px 16px; font-size: 32px; }
+	#installation article:nth-child(2) p,
+	#tutorial article:nth-child(2) p  { margin: 16px; }
+
+	@media (max-width: 660px) {
+		#introduction article,
+		#features article {
+			width: auto;
+		}
+		#introduction article svg,
+		#features article svg {
+			width: 100%;
+			margin: 0px;
+		}
+		#introduction article div,
+		#introduction article p,
+		#features article div,
+		#features article p {
+			margin-left: 4px;
+			margin-right: 4px;
+		}
+	}
+	@media (max-height: 660px) {
+		menu > aside {
+			bottom: 0px;
+		}
+		main {
+			bottom: 0px;
+		}
+		footer {
+			display: none;
+		}
+	}
 	</style>
 </head>
 <body>
 <menu class="active">
 	<b><span></span></b>
 	<li class="active" onclick="ui.changeState('welcome')">Welcome</li>
-	<li onclick="ui.changeState('settings')">Settings</li>
+	<li onclick="ui.changeState('blog')">Blog</li>
+	<li onclick="ui.changeState('research')">Research &amp;menu.active Development</li>
+	<li onclick="ui.changeState('contact')">Contact</li>
 	<aside>
-		<button class="ico-refresh ico-only" onclick="window.location.href='./index.html'"></button>
+		<button class="ico-refresh" title="Refresh" onclick="window.location.href='./index.html'"></button>
 	</aside>
 </menu>
 <main>
 
-	<section id="welcome" class="center active">
-
+	<section id="introduction" class="center active">
+	<!--	<div id="introduction-logo">
+			<h1><img alt="Logo" src="/asset/desktop.svg" width="128" height="128"></h1>
+			<h2>lychee<span>js</span></h2>
+			<h3>Next-Gen Isomorphic Application Engine</h3>
+		</div>-->
 		<article>
-			<h3><b>1</b>Play</h3>
-			<div>
-				This is the lycheeJS Separated Boilerplate.
-				It helps you understand lycheeJS while using
-				it as a library; not as an ecosystem.
-			</div>
-			<p class="center">
-				<a tabindex="1" class="button ico-browser" href="http://lycheejs.org">Open Website</a>
-				<br><br>
-				<a tabindex="1" class="button ico-browser" href="http://cultivator.lycheejs.org/projects/cultivator/tutorial/index.html">Open Tutorial</a>
+			
+		</article>
+	</section>
+
+	<section id="blog">
+		<article id="blog-selection">
+			<h3><b>1</b>Select</h3>
+			<form id="blog" enctype="application/json" action="MAIN.state" method="javascript">
+				<table class="vertical">
+					<tr>
+						<th>Article</th>
+						<td>
+							<ul class="select">
+								<li><input name="identifier" type="radio" value="Generic"><span>Initial Release</span></li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</article>
+		<article id="blog-details">
+			<h3><b>2</b>Initial Release</h3>
+			<p>
+				An Error occured :(
+			</p>
+			<p>
+				If this message keeps showing up, please install lycheeJS
+				via the installation instructions in the <a href="https://github.com/Artificial-Engineering/lycheeJS">README.md on GitHub</a>.
 			</p>
 		</article>
-
-		<article>
-			<h3><b>2</b>Advance</h3>
-			<div>
-				Advance while developing on this App.
-				Learn how to use proper <code>platform</code> tags
-				in your Definitions and how to integrate your
-				Definitions with the <code>lychee.pkg</code> file.
-			</div>
-			<pre><code class="javascript">
-lychee.define('app.entity.Custom').tags({
-	platform: 'html'
-}).supports(function(lychee, global) {
-
-	if (typeof global.ArrayBuffer === 'function') {
-		return true;
-	}
-
-	return false;
-
-}).exports(function(lychee, app, global, attachments) {
-
-	var _ArrayBuffer = global.ArrayBuffer;
-
-	var Class = function() {
-
-		this.buffer = new _ArrayBuffer();
-
-	};
-
-	Class.prototype = {
-
-	};
-
-	return Class;
-
-});
-			</code></pre>
-		</article>
-
-		<article>
-			<h3><b>3</b>Migrate</h3>
-			<div>
-				When you're ready, migrate this App into a lycheeJS
-				Integrated App with full isomorphic capabilities.
-			</div>
-			<pre><code class="bash">
-cd ./my-project;
-
-lycheejs-breeder migrate;
-			</code></pre>
-			<div>
-				Always remember, don't use platform-specific code.
-				HTML and CSS are platform-specific, too!
-			</div>
-		</article>
-
 	</section>
+	<section id="research">
 
-	<section id="settings">
-
-		<article>
-			<h3><b>1</b>Modify</h3>
+		<article id="research-selection">
+			<form id="research-selection" enctype="application/json" action="MAIN.state" method="javascript">
+				<table class="vertical">
+					<tr>
+						<td>
+							<ul class="research-select">
+								<li><input name="identifier" type="radio" value="Devvelopment"><span>Development</span></li>
+								<li><input name="identifier" type="radio" value="Paper"><span>Paper</span></li>
+								<li><input name="identifier" type="radio" value="Courses"><span>Courses</span></li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</form>
 		</article>
 
-		<article>
-			<h3><b>2</b>Preview</h3>
+		<article id="research-details">
+			<h3><b>2</b>Tutorial</h3>
+			<p>
+				An Error occured :(
+			</p>
 		</article>
-
 	</section>
-
+		<section id="contact">
+		<article id="contact-details">
+			<h3>Contact</h3>
+			<p>
+				Contact me :)
+			</p>
+		</article>
+	</section>
+</main>
 </main>
 <footer>
-	lycheeJS is (c) 2012-2016 by Artificial-Engineering and released under MIT license.
+	<a href="http://lycheejs.org">lycheeJS</a> is (c) 2012-2016 by <a href="http://artificial.engineering">Artificial Engineering</a> and released under MIT license.
+	<br>
+	Support our libre Bot Cloud via BTC <a href="bitcoin:1CamMuvrFU1QAMebPoDsL3JrioVDoxezY2?amount=0.5&label=lycheeJS%20Support">1CamMuvrFU1QAMebPoDsL3JrioVDoxezY2</a>
 </footer>
 <script>
 (function(lychee, global) {
 
 	var environment = new lychee.Environment({
-		id:       'separated-boilerplate',
-		debug:    true,
+		id:       'website',
+		debug:    false,
 		sandbox:  false,
 		build:    'app.Main',
 		type:     'source',
@@ -175,7 +353,7 @@ lycheejs-breeder migrate;
 	});
 
 	lychee.setEnvironment(environment);
-	lychee.inject(lychee.ENVIRONMENTS['/lib/lychee/dist']);
+	lychee.inject(lychee.ENVIRONMENTS['/libraries/lychee/dist']);
 
 	lychee.init(function(sandbox) {
 
