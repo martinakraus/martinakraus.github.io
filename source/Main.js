@@ -2,8 +2,8 @@
 lychee.define('app.Main').requires([
 	'lychee.data.JSON',
 	'app.state.Welcome',
-	'app.state.Blog'.
-	'app.state.Development'
+	'app.state.Blog',
+	'app.state.Development',
 	'app.state.Contact'
 ]).includes([
 	'lychee.app.Main'

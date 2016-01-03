@@ -26,10 +26,6 @@
 	<script src="/libraries/lychee/build/html/dist/index.js"></script>
 
 	<style>
-	.ico-demo:before     { content: "\e05c"; }
-	.ico-features:before { content: "\e020"; }
-	.ico-github:before   { content: "\e026"; }
-	.ico-tutorial:before { content: "\e052"; }
 	menu.active {
 		width: 164px;
 	}
@@ -61,21 +57,21 @@
 		vertical-align: middle;
 	}
 	#welcome,
-	#features {
+	#contact {
 		display: block;
 	}
-	#introduction-logo {
+	#welcome-logo {
 		display: block;
 		margin: 128px auto;
 		text-align: center;
 	}
-	#introduction-logo h1 {
+	#welcome-logo h1 {
 		display: inline-block;
 		vertical-align: middle;
 		margin: 0px 16px;
 		line-height: 0px;
 	}
-	#introduction-logo h2 {
+	#welcome-logo h2 {
 		display: inline-block;
 		height: 128px;
 		vertical-align: middle;
@@ -87,17 +83,18 @@
 		font-weight: normal;
 		line-height: 128px;
 	}
-	#introduction-logo h2 span {
+	#welcome-logo h2 span {
 		color: #d0494b;
 	}
-	#introduction-logo h3 {
+	#welcome-logo h3 {
 		margin: 0px 16px 0px 16px;
 		padding: 0px;
 		font-family: 'museo-sans-300';
 		font-size: 22px;
 		font-weight: normal;
 	}
-	#welcome article {
+	#welcome article,
+	#contact article {
 		display: block;
 		width: 576px;
 		max-width: none;
@@ -105,11 +102,76 @@
 		text-align: left;
 		border: 1px solid transparent;
 	}
-	#welcome article p{
+	#welcome article svg,
+	#contact article svg {
+		display: block;
+		width: calc(100% - 64px);
+		margin: 32px;
+	}
+	#welcome article svg text tspan,
+	#contact article svg text tspan {
+		font-family: 'museo-sans-300';
+		font-size: 20px;
+	}
+	#welcome article p,
+	#contact article p {
 		text-align: justify;
 	}
-	#welcome article p.center {
+	#welcome article p.center,
+	#contact article p.center {
 		text-align: center;
+	}
+
+	#contact > div {
+		display: block;
+		width: 576px;
+		margin: 128px auto;
+	}
+	#contact > div h3 {
+		font-family: 'museo-sans-300';
+		font-size: 32px;
+		font-weight: normal;
+		text-align: center;
+	}
+	#contact > div h3.left,
+	#contact > div h3.right {
+		display: inline-block;
+		width: calc(50% - 16px);
+		margin: 1em 0px;
+	}
+	#contact > div article.left,
+	#contact > div article.right {
+		display: inline-block;
+		width: calc(50% - 16px);
+		min-height: 384px;
+		margin: 0px 0px 32px 0px;
+		background: #363f3e;
+	}
+	#contact > div article img {
+		display: block;
+		margin: 32px auto;
+		outline: none;
+		border: 0px none;
+	}
+
+	#contact article.center {
+		display: block;
+		margin: 0px auto;
+	}
+	#contact h3.left,
+	#contact article.left {
+		float: left;
+	}
+	#contact h3.right,
+	#contact article.right {
+		float: right;
+	}
+
+	#contact > div:after,
+	#contact article.clear:after {
+		display: block;
+		content: "";
+		clear: both;
 	}
 
 	#blog {
@@ -137,11 +199,19 @@
 	#blog article:nth-child(2) p { margin: 16px; }
 
 	@media (max-width: 660px) {
-		#welcome article {
+		#welcome article,
+		#contact article {
 			width: auto;
 		}
+		#welcome article svg,
+		#contact article svg {
+			width: 100%;
+			margin: 0px;
+		}
 		#welcome article div,
-		#welcome article p {
+		#welcome article p,
+		#contact article div,
+		#contact article p {
 			margin-left: 4px;
 			margin-right: 4px;
 		}
@@ -164,22 +234,23 @@
 	<b><span></span></b>
 	<li class="active" onclick="ui.changeState('welcome')">Welcome</li>
 	<li onclick="ui.changeState('blog')">Blog</li>
-	<li onclick="ui.changeState('research')">Research &amp;menu.active Development</li>
+	<li onclick="ui.changeState('research')">Research &amp; Development</li>
 	<li onclick="ui.changeState('contact')">Contact</li>
 	<aside>
-		<button class="ico-refresh" title="Refresh" onclick="window.location.href='./index.html'"></button>
+		<button class="ico-message" title="Email" onclick="window.open('mailto:kraus.martina.m@googlemail.com', 'emailWindow')"></button>
+		<button class="ico-git" title="Github" onclick="window.location.href='https://github.com/CodeKittey'"></button>
+		<button class="ico-twitter" title="Twitter" onclick="window.location.href='https://twitter.com/wing121'"></button>
+		<button class="ico-google" title="Google+" onclick="window.location.href='https://plus.google.com/u/0/+MartinaKraus'"></button>
 	</aside>
 </menu>
 <main>
 
-	<section id="introduction" class="center active">
-	<!--	<div id="introduction-logo">
-			<h1><img alt="Logo" src="/asset/desktop.svg" width="128" height="128"></h1>
-			<h2>lychee<span>js</span></h2>
-			<h3>Next-Gen Isomorphic Application Engine</h3>
-		</div>-->
-		<article>
-			
+	<section id="welcome" class="center active">
+			<article id="contact-details">
+			<h3>Welcome</h3>
+			<p>
+				Hello World
+			</p>
 		</article>
 	</section>
 
@@ -228,27 +299,23 @@
 			</form>
 		</article>
 
-		<article id="research-details">
-			<h3><b>2</b>Tutorial</h3>
-			<p>
-				An Error occured :(
-			</p>
-		</article>
 	</section>
 		<section id="contact">
 		<article id="contact-details">
 			<h3>Contact</h3>
-			<p>
-				Contact me :)
-			</p>
+			<form id="contact" enctype="application/json" action="MAIN.state" method="javascript">
+				<ul class="contact-select">
+					<li><span>NAME</span><input name="name" type="text" value="Name"></li>
+					<li><span>E-MAIL</span><input name="name" type="email" value="E-MAIL"></li>
+					<li><span>MESSAGE</span><input name="name" type="textarea" value="MESSAGE"></li>
+				</ul>
+			</form>
 		</article>
 	</section>
 </main>
 </main>
 <footer>
-	<a href="http://lycheejs.org">lycheeJS</a> is (c) 2012-2016 by <a href="http://artificial.engineering">Artificial Engineering</a> and released under MIT license.
-	<br>
-	Support our libre Bot Cloud via BTC <a href="bitcoin:1CamMuvrFU1QAMebPoDsL3JrioVDoxezY2?amount=0.5&label=lycheeJS%20Support">1CamMuvrFU1QAMebPoDsL3JrioVDoxezY2</a>
+	Made with <a href="http://lycheejs.org">lycheeJS</a> (c) 2012-2016 - released under MIT license by <a href="http://artificial.engineering">Artificial Engineering</a>.
 </footer>
 <script>
 (function(lychee, global) {
